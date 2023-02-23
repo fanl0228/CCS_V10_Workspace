@@ -479,6 +479,7 @@ int32_t DPU_radarProcess_process (void *handle, cplx16_t * pDataIn, void * pData
             }
         }
 
+		// All range bin processed?
 		for ( i = processInst->cfarRangeSkipLeft; i < processInst->numRangeBins - processInst->cfarRangeSkipRight; i++)
 		{
 			processInst->aoaInput->rangeIndx				=	i;

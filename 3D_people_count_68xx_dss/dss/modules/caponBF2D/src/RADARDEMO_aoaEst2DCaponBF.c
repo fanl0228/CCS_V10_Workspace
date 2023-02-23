@@ -486,6 +486,7 @@ RADARDEMO_aoaEst2DCaponBF_errorCode    RADARDEMO_aoaEst2DCaponBF_run(
     if (errorCode > RADARDEMO_AOACAPONBF_NO_ERROR)
         return (errorCode);
 
+	// Step 1: clutterRemoval() -> covInv() -> raHeatmap()
 	if (input->processingStepSelector == 0) /* estimate the range-angle heatmap, called per range bin*/
 	{
 
@@ -592,6 +593,8 @@ RADARDEMO_aoaEst2DCaponBF_errorCode    RADARDEMO_aoaEst2DCaponBF_run(
 		
 
 	} // end of if (input->processingStepSelector == 0)
+
+	// ====> Step2: 
 	else if (input->processingStepSelector == 1) /* estimate 2D angle -- azimuth, elevation and Doppler estimation, called per detected point*/
 	{
 		int32_t angleDetIdx, dopplerOutCnt;
@@ -606,6 +609,7 @@ RADARDEMO_aoaEst2DCaponBF_errorCode    RADARDEMO_aoaEst2DCaponBF_run(
 		__float2_t f2temp;
 		float ftemp;
 
+		// if Zoom in:
 		if (aoaEstBFInst->aeEstimation_handle->zoomInFlag == 0)
 		{
 			uint32_t rngMaskIdx, rngMaskOffset, rngMask, azimuthIndx;

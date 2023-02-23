@@ -2593,6 +2593,9 @@ static void Pcount3DDemo_initTask(UArg arg0, UArg arg1)
     dpmInitCfg.socHandle        = gMmwMssMCB.socHandle;
     dpmInitCfg.ptrProcChainCfg  = &gDPC_ObjDetRangeHWACfg;;
     dpmInitCfg.instanceId       = DPC_OBJDET_R4F_INSTANCEID;
+
+    /* DPM_Domain_DISTRIBUTED: In the distributed domain the control is executing on one subsystem
+     * while the DPC is executing on both the subsystems     */
     dpmInitCfg.domain           = DPM_Domain_DISTRIBUTED;
     dpmInitCfg.reportFxn        = Pcount3DDemo_DPC_ObjectDetection_reportFxn;
     dpmInitCfg.arg              = &objDetInitParams;

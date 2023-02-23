@@ -271,6 +271,7 @@ static int32_t Pcount3DDemo_CLISensorStart (int32_t argc, char* argv[])
         }
     }
 
+    // ==> Step1:  Open sensor
     retVal = Pcount3DDemo_openSensor(gMmwMssMCB.sensorState == Pcount3DDemo_SensorState_INIT);
     if(retVal != 0)
     {
@@ -283,13 +284,24 @@ static int32_t Pcount3DDemo_CLISensorStart (int32_t argc, char* argv[])
     /* Get the mmWave ctrlCfg from the CLI mmWave Extension */
     if(doReconfig)
     {
+        /* This is an API provided by the cli_mmwave.c extension handler to get the mmWave control configuration.*/
+        /* Get profile,chirp,frame config parameter..*/
         CLI_getMMWaveExtensionConfig (&gMmwMssMCB.cfg.ctrlCfg);
+        
+        /* CLI_getMMWaveExtensionConfig get gMmwMssMCB.cfg.ctrlCfg and it is called by
+           Pcount3DDemo_configSensor() function */
+
+        /* MMW demo helper Function to configure sensor. User need to fill gMmwMssMCB.cfg.ctrlCfg and
+        add profiles/chirp to mmWave before calling this function */
+        // ==> Step2: config sensor
         retVal = Pcount3DDemo_configSensor();
         if(retVal != 0)
         {
             return -1;
         }
     }
+
+    // ==> Step3: start sensor.
     retVal = Pcount3DDemo_startSensor();
     if(retVal != 0)
     {

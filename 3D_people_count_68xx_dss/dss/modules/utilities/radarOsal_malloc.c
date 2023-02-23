@@ -100,17 +100,21 @@ int32_t radarOsal_memDeInit(void)
                input radarMemOsal_HeapType.
 
    \param[in]    scratchFlag
-               Input flag to indicate whether request memory is a scratch that can be shared across modules. 1 for scratch memory request, and 0 otherwise.
+               Input flag to indicate whether request memory is a scratch that can be shared across modules. 
+			   1 for scratch memory request, and 0 otherwise.
 
    \param[in]    size
                Request memory size in number of bytes.
 
    \param[in]    alignment
-               Request memory alignment in number of bytes. 0 for no alignment requirement. Alignment has to be number being power of 2.
+               Request memory alignment in number of bytes. 0 for no alignment requirement. 
+			   Alignment has to be number being power of 2.
 
    \return    NULL if malloc failed, void pointer if malloc passed.
-   \pre       Note that L2 heap is static pointer assignment for BIOS-less implementation. No run-time malloc/free from L2 heap is supported.
-              radarOsal_memDeInit() must be called to reset the pointers before L2 heap can be used by another application.
+   \pre       Note that L2 heap is static pointer assignment for BIOS-less implementation. 
+   			  No run-time malloc/free from L2 heap is supported.
+              radarOsal_memDeInit() must be called to reset the pointers before L2 heap can be 
+			  used by another application.
    \post      none
  */
 void * radarOsal_memAlloc(uint8_t memoryType, uint8_t scratchFlag, uint32_t size, uint16_t alignment)
