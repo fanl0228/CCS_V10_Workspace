@@ -779,7 +779,6 @@ void MmwDemo_XYZestimation(MmwDemo_DSS_DataPathObj *obj,    uint32_t objIndex)
 /**
 *  @b Description
 *  @n
-/**
 *  @b Description
 *  @n
 *      Waits for 1D FFT data to be transferred to input buffer for 2D-FFT caclulation.
@@ -2989,19 +2988,19 @@ uint32_t findKLargestPeaks(uint16_t * restrict cfarDetObjIndexBuf,
 *  The MRR subframe achieves a maximum unambiguous velocity of 90kmph 
 *  by using signal processing techniques that help disambiguate 
 *  velocity.  This method works by using two different estimates of 
-*  velocity from the two kinds of chirps (‘fast chirps’ and ‘slow 
-*  chirps’) transmitted in the MRR subframe. If the two velocity estimates 
+*  velocity from the two kinds of chirps (鈥榝ast chirps鈥� and 鈥榮low 
+*  chirps鈥�) transmitted in the MRR subframe. If the two velocity estimates 
 *  do not agree, then velocity disambiguation is necessary. To 
 *  disambiguate it is necessary to rationalize the two velocity 
 *  measurements, and find out the disambiguation factor, k.  If the 
 *  naive maximum unambiguous velocity of the 'fast chirp' is v_f, and 
 *  that of the 'slow chirp' is v_s. Then after the disambiguation process, 
-*  the disambiguated velocity would  〖2kv〗_f+v, where v is the naïve 
-*  estimated velocity from the ‘fast chirps’.
+*  the disambiguated velocity would  銆�2kv銆梍f+v, where v is the na茂ve 
+*  estimated velocity from the 鈥榝ast chirps鈥�.
 * 
 *  The disambiguation process works by using the 'fast chirp' velocity to 
 *  compute different disambiguated velocity hypotheses. This is done by 
-*  taking the 'fast chirp' velocity and adding 2k v_f, where k ∈ {-1,0,1} 
+*  taking the 'fast chirp' velocity and adding 2k v_f, where k 鈭� {-1,0,1} 
 *  (an unwrapping process on the velocity estimate). These hypotheses are 
 *  then converted to indices of the 'slow chirp' by finding the equivalent 
 *  estimated velocities in the 'slow chirp' configuration ( essentially, 

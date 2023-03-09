@@ -516,7 +516,7 @@ void Can_Initialize(void)
     MCANAppInitParams (&mcanCfgParams);
 
     /* Initialize the CANFD driver */
-    canHandle = CANFD_init(canHandle, &mcanCfgParams, &errCode);
+    canHandle = CANFD_init(0, &mcanCfgParams, &errCode);
     if (canHandle == NULL)
     {
         System_printf ("Error: CANFD Module Initialization failed [Error code %d]\n", errCode);
@@ -887,7 +887,7 @@ static void MmwDemo_applyPhShift(UArg arg0, UArg arg1)
             if (retVal != RL_RET_CODE_OK)
             {
                System_printf ("Error: Unable to configure per chirp phase shift [Error %d]\n",  retVal);
-               return -1;
+               return;
             }
 
         }

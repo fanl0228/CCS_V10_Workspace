@@ -304,9 +304,9 @@ static int32_t MRR_MSS_CLIAdvancedFrameCfg (int32_t argc, char* argv[])
     int32_t                 retVal;
     int32_t                 indx;
     rlRfLdoBypassCfg_t rfLdoBypassCfg[1] = {0};
-    uint8_t                 startIndex;
-    uint8_t                 endIndex;
-    uint8_t                 scanCount;
+    //uint8_t                 startIndex;
+    //uint8_t                 endIndex;
+    //uint8_t                 scanCount;
     rlRfPhaseShiftCfg_t     txphaseshiftCfg[1] = {0};
     uint8_t                 txph1Code, txph2Code, txph3Code;
     rlRfMiscConf_t          phaseShiftPerChirpEnable[1] = {0};
