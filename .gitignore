@@ -5,6 +5,5 @@ RemoteSystemsTempFiles/
 */Debug/
 */.settings/
 */isk/
-out_of_box_1843_mss/isk/
-out_of_box_1843_dss/isk/
-
+*/.launches/
+out_of_box_1843_mss/isk/*.
